@@ -6,7 +6,7 @@ import instituteImage from "@/assets/institute-training.jpg";
 const Institute = () => {
   const handleEnroll = (course: string) => {
     window.open(
-      `https://wa.me/919876543210?text=Hi,%20I'd%20like%20to%20enroll%20in%20the%20${course}%20course%20at%20ABCD%20Institute`,
+      `https://wa.me/919966666719?text=Hi,%20I'd%20like%20to%20enroll%20in%20the%20${course}%20course%20at%20ABCD%20Institute`,
       "_blank"
     );
   };

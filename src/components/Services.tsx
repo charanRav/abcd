@@ -7,7 +7,7 @@ import spaImage from "@/assets/service-spa.jpg";
 const Services = () => {
   const handleBookService = (service: string) => {
     window.open(
-      `https://wa.me/919876543210?text=Hi,%20I'd%20like%20to%20book%20${service}%20at%20ABCD%20Salon`,
+      `https://wa.me/919966666719?text=Hi,%20I'd%20like%20to%20book%20${service}%20at%20ABCD%20Salon`,
       "_blank"
     );
   };

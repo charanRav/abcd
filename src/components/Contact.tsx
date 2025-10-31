@@ -18,7 +18,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const message = `Hi, I'd like to book an appointment at ABCD Salon.%0AName: ${formData.name}%0AService: ${formData.service}%0APreferred Date: ${formData.date}%0APhone: ${formData.phone}`;
-    window.open(`https://wa.me/919876543210?text=${message}`, "_blank");
+    window.open(`https://wa.me/919966666719?text=${message}`, "_blank");
     
     toast({
       title: "Redirecting to WhatsApp",
@@ -122,10 +122,10 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-foreground mb-2">Phone</h4>
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+919966666719"
                     className="text-[hsl(var(--gold))] hover:underline"
                   >
-                    +91 98765 43210
+                    +91 99666 66719
                   </a>
                 </div>
               </div>
