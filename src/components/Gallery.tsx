@@ -1,9 +1,24 @@
 import { Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 const Gallery = () => {
-  // Placeholder for Instagram gallery - in production, this would fetch from Instagram API
-  const instagramPlaceholders = Array(8).fill(null);
+  useEffect(() => {
+    // Load Instagram embed script
+    const script = document.createElement('script');
+    script.src = '//www.instagram.com/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    // Reinitialize embeds when component mounts
+    if ((window as any).instgrm) {
+      (window as any).instgrm.Embeds.process();
+    }
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <section id="gallery" className="py-16 md:py-24 px-4 bg-gradient-dark">
@@ -19,27 +34,69 @@ const Gallery = () => {
         </div>
 
         {/* Instagram Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          {instagramPlaceholders.map((_, index) => (
-            <a
-              key={index}
-              href="https://www.instagram.com/abcdnelloresalon/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative aspect-square rounded-2xl overflow-hidden hover-lift bg-card/50 border border-[hsl(var(--gold))]/20"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--gold))]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <Instagram className="w-12 h-12 text-[hsl(var(--gold))]" />
-              </div>
-              
-              {/* Placeholder shimmer effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-muted/30 to-muted/10 animate-pulse" />
-              
-              <div className="absolute inset-0 flex items-center justify-center text-foreground/30">
-                <Instagram className="w-8 h-8" />
-              </div>
-            </a>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {/* Video 1 */}
+          <div className="flex justify-center">
+            <blockquote 
+              className="instagram-media" 
+              data-instgrm-captioned 
+              data-instgrm-permalink="https://www.instagram.com/reel/Czxz9NfO7kl/?utm_source=ig_embed&amp;utm_campaign=loading" 
+              data-instgrm-version="14" 
+              style={{ 
+                background: '#FFF', 
+                border: 0, 
+                borderRadius: '3px', 
+                boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)', 
+                margin: '1px', 
+                maxWidth: '540px', 
+                minWidth: '326px', 
+                padding: 0, 
+                width: 'calc(100% - 2px)' 
+              }}
+            />
+          </div>
+
+          {/* Video 2 */}
+          <div className="flex justify-center">
+            <blockquote 
+              className="instagram-media" 
+              data-instgrm-captioned 
+              data-instgrm-permalink="https://www.instagram.com/reel/CzRQf2-Sgut/?utm_source=ig_embed&amp;utm_campaign=loading" 
+              data-instgrm-version="14" 
+              style={{ 
+                background: '#FFF', 
+                border: 0, 
+                borderRadius: '3px', 
+                boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)', 
+                margin: '1px', 
+                maxWidth: '540px', 
+                minWidth: '326px', 
+                padding: 0, 
+                width: 'calc(100% - 2px)' 
+              }}
+            />
+          </div>
+
+          {/* Video 3 */}
+          <div className="flex justify-center">
+            <blockquote 
+              className="instagram-media" 
+              data-instgrm-captioned 
+              data-instgrm-permalink="https://www.instagram.com/reel/DEyxREdSzPI/?utm_source=ig_embed&amp;utm_campaign=loading" 
+              data-instgrm-version="14" 
+              style={{ 
+                background: '#FFF', 
+                border: 0, 
+                borderRadius: '3px', 
+                boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)', 
+                margin: '1px', 
+                maxWidth: '540px', 
+                minWidth: '326px', 
+                padding: 0, 
+                width: 'calc(100% - 2px)' 
+              }}
+            />
+          </div>
         </div>
 
         {/* Instagram CTA */}
