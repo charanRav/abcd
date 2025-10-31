@@ -95,13 +95,21 @@ const Hero = () => {
         </div>
 
         {/* Instagram Link */}
-        <a
-          href="https://www.instagram.com/abcdnelloresalon/"
-          target="_blank"
+        <a 
+          href="https://www.instagram.com/abcdnelloresalon/" 
+          target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-foreground/80 hover:text-[hsl(var(--gold))] transition-smooth text-sm"
+          style={{
+            display: 'inline-block',
+            backgroundColor: '#E4405F',
+            color: 'white',
+            padding: '10px 20px',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            fontWeight: 'bold',
+            fontFamily: 'sans-serif'
+          }}
         >
-          <Instagram className="w-4 h-4" />
           Follow us on Instagram
         </a>
       </div>
